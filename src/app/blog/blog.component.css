@@ -1,0 +1,14 @@
+/* collage.component.css */
+
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    /* Example: Set a maximum height for the images */
+}
+
+h1{
+    color: green;
+    font-family: serif;
+    font-weight: 700;
+}

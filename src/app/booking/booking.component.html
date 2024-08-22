@@ -1,0 +1,57 @@
+<app-about></app-about>
+<div class="container p-4"
+    style="border: 1px solid rgb(90, 90, 90); border-radius: 10px; margin-top: 15%; background-color: #07233e;">
+    <div class="booking-form">
+        <h2>Book Your Floating Luxuary House Boat</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <form (ngSubmit)="submitForm()" [formGroup]="bookingForm" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" formControlName="name" required>
+                        <div *ngIf="bookingForm.get('name')!.invalid && (bookingForm.get('name')!.dirty || bookingForm.get('name')!.touched)"
+                            class="invalid-feedback">
+                            Name is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" formControlName="email" required>
+                        <div *ngIf="bookingForm.get('email')!.invalid && (bookingForm.get('email')!.dirty || bookingForm.get('email')!.touched)"
+                            class="invalid-feedback">
+                            Invalid email format.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" class="form-control" formControlName="phone" required>
+                        <div *ngIf="bookingForm.get('phone')!.invalid && (bookingForm.get('phone')!.dirty || bookingForm.get('phone')!.touched)"
+                            class="invalid-feedback">
+                            Phone number is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fromDate">From Date</label>
+                        <input type="date" id="fromDate" class="form-control" formControlName="fromDate" required>
+                        <div *ngIf="bookingForm.get('fromDate')!.invalid && (bookingForm.get('fromDate')!.dirty || bookingForm.get('fromDate')!.touched)"
+                            class="invalid-feedback">
+                            From Date is required.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="toDate">To Date</label>
+                        <input type="date" id="toDate" class="form-control" formControlName="toDate" required>
+                        <div *ngIf="bookingForm.get('toDate')!.invalid && (bookingForm.get('toDate')!.dirty || bookingForm.get('toDate')!.touched)"
+                            class="invalid-feedback">
+                            To Date is required.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="bookingForm!.invalid">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-7 d-flex align-items-center justify-content-center">
+                <img src="../../assets/images/HOUSEBOAT.jpg" height="100%" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+</div>
